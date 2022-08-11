@@ -347,15 +347,15 @@ func (c *viewCollector) Collect(ch chan<- prometheus.Metric) {
 		}
 	}
 
-	for _, v := range c.stats.ZoneViews {
-		for _, z := range v.ZoneData {
-			if suint, err := strconv.ParseUint(z.Serial, 10, 64); err == nil {
-				ch <- prometheus.MustNewConstMetric(
-					zoneSerial, prometheus.CounterValue, float64(suint), v.Name, z.Name,
-				)
-			}
-		}
-	}
+//	for _, v := range c.stats.ZoneViews {
+//		for _, z := range v.ZoneData {
+//			if suint, err := strconv.ParseUint(z.Serial, 10, 64); err == nil {
+//				ch <- prometheus.MustNewConstMetric(
+//					zoneSerial, prometheus.CounterValue, float64(suint), v.Name, z.Name,
+//				)
+//			}
+//		}
+//	}
 }
 
 type taskCollector struct {
